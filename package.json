@@ -1,0 +1,19 @@
+{
+  "name": "habittracker",
+  "version": "1.0.0",
+  "description": "The application was created to track the number of days without bad habits",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProkoshkinLeonid/habitTracker.git"
+  },
+  "author": "Prokoshkin Leonid <leon.prok@icloud.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProkoshkinLeonid/habitTracker/issues"
+  },
+  "homepage": "https://github.com/ProkoshkinLeonid/habitTracker#readme"
+}
