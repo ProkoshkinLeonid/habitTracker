@@ -12,12 +12,17 @@
     "strict": true,
     "moduleResolution": "node",
     "typeRoots": [
-      "node_modules/@types",
+      "node_modules/@types"
     ],
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@styles/*": ["src/styles/*"],
+      "@components/*": ["src/components/*"]
+    }
   },
   "exclude": [
     "node_modules"
