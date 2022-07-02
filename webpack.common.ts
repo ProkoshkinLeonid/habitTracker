@@ -3,6 +3,7 @@ import {CleanWebpackPlugin} from 'clean-webpack-plugin'
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin'
 
 module.exports = {
     entry: './src/index.tsx',
@@ -23,26 +24,62 @@ module.exports = {
     },
     module: {
         rules: [
+            // {
+            //     test: /\.tsx?$/,
+            //     loader: 'ts-loader',
+            // },
             {
-                test: /\.tsx?$/,
-                loader: 'ts-loader',
-            },
-            {
-                test: /\.(sa|sc|c)ss$/,
+                test: /\.(js|ts|tsx)$/,
+                exclude: [/node_modules/],
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {},
+                        loader: 'babel-loader',
+                        options: {
+                            babelrc: false,
+                            presets: [
+                                '@babel/preset-typescript',
+                                ['@babel/preset-react', { runtime: 'automatic' }],
+                                [
+                                    '@babel/preset-env',
+                                    { targets: { node: 14 }, modules: false },
+                                ],
+                            ],
+                            plugins: ['@vanilla-extract/babel-plugin'],
+                        },
                     },
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader',
                 ],
             },
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            // {
+            //     test: /\.(sc|c)ss$/,
+            //     use: [
+            //         {
+            //             loader: MiniCssExtractPlugin.loader,
+            //             options: {},
+            //         },
+            //         'style-loader',
+            //     ],
+            // },
+            // {
+            //     test: /\.vanilla\.css$/i,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         {
+            //             loader: require.resolve('css-loader'),
+            //             options: {
+            //                 url: false
+            //             }
+            //         }
+            //     ]
+            // }
         ],
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new VanillaExtractPlugin(),
         // new CopyWebpackPlugin({
         //     patterns: [
         //         {
