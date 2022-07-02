@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { HabitComponent } from '@components/HabitComponent'
+import {HabitComponent} from "@components/HabitComponent";
+
 //eslint-disable-next-line
 // @ts-ignore
 import { exampleStyle, vars, themeClass } from '@styles/styles.css'
