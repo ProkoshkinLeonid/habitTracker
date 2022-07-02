@@ -19,6 +19,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js'],
     },
     devServer: {
+        historyApiFallback: true,
         compress: true,
         port: 3000,
     },
