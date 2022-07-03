@@ -9,7 +9,7 @@ module.exports = {
     entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'app/bundle'),
-        filename: 'bundle.[hash].js',
+        filename: 'bundle.[fullhash:6].js',
     },
     resolve: {
         alias: {
@@ -101,7 +101,7 @@ module.exports = {
             },
         }),
         new MiniCssExtractPlugin({
-            filename: 'style.[hash].css',
+            filename: 'style.[fullhash:6].css',
         }),
     ],
 };
