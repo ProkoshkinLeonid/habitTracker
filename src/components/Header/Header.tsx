@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {AsideMenu} from "@components/Header/AsideMenu/AsideMenu";
+import {headerAsideIcon, headerMenuItemStyles, headerMenuStyles, headerStyles} from "@components/Header/header.css";
 
 type HeaderPropsTypes = {
 
@@ -9,17 +10,17 @@ export const Header = (props: HeaderPropsTypes) => {
 
     return (
         <>
-            <header style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <div onClick={() => setIsAsideOpen(true)}>
+            <header className={headerStyles}>
+                <div className={headerAsideIcon} onClick={() => setIsAsideOpen(true)}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 12H21M3 6H21M3 18H15" stroke="#444444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                 </div>
                 <div>
-                    <ul>
-                        <li>Menu 1</li>
-                        <li>Menu 2</li>
-                        <li>Menu 3</li>
+                    <ul className={headerMenuStyles}>
+                        <li className={headerMenuItemStyles}>Menu 1</li>
+                        <li className={headerMenuItemStyles}>Menu 2</li>
+                        <li className={headerMenuItemStyles}>Menu 3</li>
                     </ul>
                 </div>
                 <div>

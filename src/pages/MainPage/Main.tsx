@@ -7,12 +7,10 @@ import {HabitComponent} from "@components/HabitComponent";
 import { exampleStyle, vars, themeClass } from '@styles/styles.css'
 
 export const Main = () => {
-
-    console.log(themeClass)
     const a = 5
     return (
         <div>
-            <h1>Its main page</h1>
+            <h1 className={exampleStyle}>Its main page</h1>
             <Link to={'/about'}>О нас</Link>
         </div>
     )
